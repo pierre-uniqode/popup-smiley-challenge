@@ -1,0 +1,215 @@
+@keyframes blink {
+    0% {
+        transform: scaleY(0);
+    }
+    1% {
+        transform: scaleY(1);
+    }
+    100% {
+        transform: scaleY(1);
+    }
+}
+
+.smileys-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.smileys-container .smiley {
+    height: 56px;
+    width: 56px;
+    border-radius: 56px;
+    background: radial-gradient(93.75% 96.51% at 6.25% 97.32%, #FFCD54 0%, #FFDE8A 100%)
+}
+
+.smileys-container .smiley {
+    height: 56px;
+    width: 56px;
+    border-radius: 56px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.smileys-container .smiley.very-sad {
+    background: radial-gradient(93.75% 96.51% at 6.25% 97.32%, #FF3E28 0%, #FF8053 100%)
+}
+
+.smileys-container .smiley.sad {
+    background: radial-gradient(93.75% 96.51% at 6.25% 97.32%, #FF5628 0%, #FFB054 100%)
+}
+
+.smileys-container .smiley.neutral {
+    background: radial-gradient(93.75% 96.51% at 6.25% 97.32%, #FFCD54 0%, #FFDE8A 100%)
+}
+
+.smileys-container .smiley.happy {
+    background: radial-gradient(93.75% 96.51% at 6.25% 97.32%, #FFC528 0%, #FFE354 100%)
+}
+
+.smileys-container .smiley.very-happy {
+    background: radial-gradient(93.75% 96.51% at 6.25% 97.32%, #FFE731 0%, #FFF36A 100%)
+}
+
+.smileys-container .smiley .face-container {
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.smileys-container .smiley .face-container {
+    transition: transform .2s ease-in-out;
+}
+
+.smileys-container .smiley.very-sad .face-container {
+    transform: translateX(5px) translateY(8px);
+}
+
+.smileys-container .smiley.sad .face-container {
+    transform: translateX(5px) translateY(4px);
+}
+
+.smileys-container .smiley.neutral .face-container {
+    transform: translateX(5px) translateY(0px);
+}
+
+.smileys-container .smiley.happy .face-container {
+    transform: translateX(5px) translateY(-4px);
+}
+
+.smileys-container .smiley.very-happy .face-container {
+    transform: translateX(5px) translateY(-8px);
+}
+
+.smileys-container .smiley.very-sad:hover .face-container {
+    transform: translateX(-5px) translateY(8px);
+}
+
+.smileys-container .smiley.sad:hover .face-container {
+    transform: translateX(-5px) translateY(4px);
+}
+
+.smileys-container .smiley.neutral:hover .face-container {
+    transform: translateX(-5px) translateY(0px);
+}
+
+.smileys-container .smiley.happy:hover .face-container {
+    transform: translateX(-5px) translateY(-4px);
+}
+
+.smileys-container .smiley.very-happy:hover .face-container {
+    transform: translateX(-5px) translateY(-8px);
+}
+
+.smileys-container .smiley .eye {
+    height: 8px;
+    width: 8px;
+    border-radius: 8px;
+    background-color: #00232B;
+}
+
+.eye {
+    animation: blink 10s linear infinite;
+}
+
+.very-sad .eye {
+    animation-delay: 0s;
+}
+
+.sad .eye {
+    animation-delay: .2s;
+}
+
+.neutral .eye {
+    animation-delay: .4s;
+}
+
+.happy .eye {
+    animation-delay: .6s;
+}
+
+.very-happy .eye {
+    animation-delay: .8s;
+}
+
+.smileys-container .smiley .eye-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform: translateY(-4px);
+}
+
+.smileys-container .smiley .eyebrow {
+    height: 4px;
+    width: 12px;
+    margin-bottom: 2px;
+    background-color: #00232B;
+    transform: rotate(10deg);
+}
+
+.smileys-container .smiley .eyebrow.right {
+    transform: rotate(-10deg);
+}
+
+.smileys-container .smiley .face-container .mouth {
+    background-color: #00232B;
+}
+
+.smileys-container .smiley.very-sad .face-container .mouth,
+.smileys-container .smiley.sad .face-container .mouth {
+    background-color: transparent;
+    height: 10px;
+    width: 10px;
+    min-width: 10px;
+    border-radius: 16px;
+    border-top: solid 4px #00232B;
+    border-left: solid 4px #00232B;
+    border-bottom: solid 4px transparent;
+    border-right: solid 4px transparent;
+    transform: translateY(8px) rotate(45deg);
+}
+
+.smileys-container .smiley.very-sad .face-container .mouth {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.smileys-container .smiley.neutral .face-container .mouth {
+    height: 4px;
+    width: 16px;
+    transform: translateY(6px);
+}
+
+.smileys-container .smiley.happy .face-container .mouth {
+    background-color: transparent;
+    height: 10px;
+    width: 10px;
+    border-radius: 16px;
+    border-bottom: solid 4px #00232B;
+    border-left: solid 4px #00232B;
+    border-top: solid 4px transparent;
+    border-right: solid 4px transparent;
+    transform: translateY(4px) rotate(-45deg);
+}
+
+.smileys-container .smiley.very-happy .face-container .mouth {
+    background-color: #00232B;
+    height: 5px;
+    width: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border: 4px solid #00232B;
+    border-top: 0;
+    transform: translateY(8px);
+}
+
+.smileys-container .smiley {
+    border: solid 8px #002026;
+}
+
+.smileys-container .smiley.active {
+    border: solid 8px white;
+}
+
