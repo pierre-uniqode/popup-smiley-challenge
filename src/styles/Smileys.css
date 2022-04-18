@@ -12,15 +12,9 @@
 
 .smileys-container {
     display: flex;
+    height: 100%;
     justify-content: center;
     align-items: center;
-}
-
-.smileys-container .smiley {
-    height: 56px;
-    width: 56px;
-    border-radius: 56px;
-    background: radial-gradient(93.75% 96.51% at 6.25% 97.32%, #FFCD54 0%, #FFDE8A 100%)
 }
 
 .smileys-container .smiley {
@@ -84,23 +78,28 @@
     transform: translateX(5px) translateY(-8px);
 }
 
-.smileys-container .smiley.very-sad:hover .face-container {
+.smileys-container .smiley.very-sad:hover .face-container,
+.smileys-container .smiley.active.very-sad .face-container{
     transform: translateX(-5px) translateY(8px);
 }
 
-.smileys-container .smiley.sad:hover .face-container {
+.smileys-container .smiley.sad:hover .face-container,
+.smileys-container .smiley.active.sad .face-container{
     transform: translateX(-5px) translateY(4px);
 }
 
-.smileys-container .smiley.neutral:hover .face-container {
+.smileys-container .smiley.neutral:hover .face-container,
+.smileys-container .smiley.active.neutral .face-container {
     transform: translateX(-5px) translateY(0px);
 }
 
-.smileys-container .smiley.happy:hover .face-container {
+.smileys-container .smiley.happy:hover .face-container,
+.smileys-container .smiley.active.happy .face-container {
     transform: translateX(-5px) translateY(-4px);
 }
 
-.smileys-container .smiley.very-happy:hover .face-container {
+.smileys-container .smiley.very-happy:hover .face-container,
+.smileys-container .smiley.active.very-happy .face-container{
     transform: translateX(-5px) translateY(-8px);
 }
 
@@ -212,4 +211,3 @@
 .smileys-container .smiley.active {
     border: solid 8px white;
 }
-
