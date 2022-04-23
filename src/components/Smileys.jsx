@@ -1,17 +1,7 @@
 import React, { useEffect } from 'react';
 import '../styles/Smileys.css';
 
-function Smileys() {
-    function activateSmiley(evt) {
-        const smileys = document.getElementsByClassName("smiley");
-
-        for(let i = 0 ; i < smileys.length ; i++) {
-            smileys[i].classList.remove("active");
-        }
-
-        evt.currentTarget.className += " active";
-    }
-
+function Smileys(props) {
     function randomizeEyesBlink() {
         const verySadSmileyParent = document.querySelector('.very-sad');
         const sadSmileyParent = document.querySelector('.sad');
@@ -57,54 +47,60 @@ function Smileys() {
     }, [randomizeEyesBlink]);
 
     return (
-        <div className="smileys-container">
-            <div className="smiley very-sad" onClick={activateSmiley}>
-                <div className="face-container">
-                    <div className="eye-container">
-                        <div className="eyebrow"></div>
+        <div className="smileys-wrapper">
+            <div className="smileys-container">
+                <div className="smiley very-sad" onClick={(e) => props.activateSmiley(e, "1/5 - Pignolesque")}>
+                    <div className="face-container">
+                        <div className="eye-container">
+                            <div className="eyebrow"></div>
+                            <div className="eye"></div>
+                        </div>
+
+                        <div className="mouth"></div>
+
+                        <div className="eye-container">
+                            <div className="eyebrow right"></div>
+                            <div className="eye"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="smiley sad" onClick={(e) => props.activateSmiley(e, "2/5 - Nul")}>
+                    <div className="face-container">
+                        <div className="eye"></div>
+                        <div className="mouth"></div>
                         <div className="eye"></div>
                     </div>
+                </div>
 
-                    <div className="mouth"></div>
+                <div className="smiley neutral" onClick={(e) => props.activateSmiley(e, "3/5 - Passable")}>
+                    <div className="face-container">
+                        <div className="eye"></div>
+                        <div className="mouth"></div>
+                        <div className="eye"></div>
+                    </div>
+                </div>
 
-                    <div className="eye-container">
-                        <div className="eyebrow right"></div>
+                <div className="smiley happy" onClick={(e) => props.activateSmiley(e, "4/5 - Au top !")}>
+                    <div className="face-container">
+                        <div className="eye"></div>
+                        <div className="mouth"></div>
+                        <div className="eye"></div>
+                    </div>
+                </div>
+
+                <div className="smiley very-happy" onClick={(e) => props.activateSmiley(e, "5/5 - Formidable !")}>
+                    <div className="face-container">
+                        <div className="eye"></div>
+                        <div className="mouth"></div>
                         <div className="eye"></div>
                     </div>
                 </div>
             </div>
 
-            <div className="smiley sad" onClick={activateSmiley}>
-                <div className="face-container">
-                    <div className="eye"></div>
-                    <div className="mouth"></div>
-                    <div className="eye"></div>
-                </div>
-            </div>
+            <p id="text-value">
 
-            <div className="smiley neutral" onClick={activateSmiley}>
-                <div className="face-container">
-                    <div className="eye"></div>
-                    <div className="mouth"></div>
-                    <div className="eye"></div>
-                </div>
-            </div>
-
-            <div className="smiley happy" onClick={activateSmiley}>
-                <div className="face-container">
-                    <div className="eye"></div>
-                    <div className="mouth"></div>
-                    <div className="eye"></div>
-                </div>
-            </div>
-
-            <div className="smiley very-happy" onClick={activateSmiley}>
-                <div className="face-container">
-                    <div className="eye"></div>
-                    <div className="mouth"></div>
-                    <div className="eye"></div>
-                </div>
-            </div>
+            </p>
         </div>
     );
 }

@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+@keyframes spin {
+    0% {
+        transform: translateY(-50%) translateX(-50%) rotate(0deg);
+    }
+    100% {
+        transform: translateY(-50%) translateX(-50%) rotate(360deg);
+    }
+}
+
+#popup-content {
+    transition: transform ease-in-out .3s;
+}
+
+.popups-wrapper {
+    margin: auto;
+    transition: all ease-out .7s;
+}
+
+.popup-container-clone {
+    border: solid 4px white;
+    position: absolute;
+    background-color: #002026;
+    width: 460px;
+    height: 620px;
+    top: 50%;
+    left: 50%;
+    transform-origin: center;
+    transform: translateX(-50%) translateY(-50%) scale(0);
+    transition: all ease .7s;
+    transition-delay: .6s;
+}
+
+.popup-container {
+    display: flex;
+    margin: auto;
+    width: 460px;
+    height: 620px;
+    flex-direction: column;
+    justify-content: center;
+    border: solid 4px white;
+    color: white;
+    font-family: Montserrat;
+    position: relative;
+    background-color: #002026;
+    transform-origin: center;
+    transform: translateX(0) translateY(0)  scale(0);
+    transition: all ease .7s;
+    transition-delay: .6s;
+}
+
+.popup-container p {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 17.30px;
+    margin-bottom: 0;
+}
+
+.popup-container h1 {
+    font-weight: 800;
+    font-size: 40px;
+    line-height: 38.6px;
+}
+
+.close-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    cursor: pointer;
+}
+
+.close-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 7px 12px;
+    padding-left: 7px;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.close-background {
+    position: absolute;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    left: -120%;
+    background-color: #1D4D56;
+    transform: skew(-45deg);
+    transition: all ease-in-out .3s;
+}
+
+.close-wrapper:hover .close-background {
+    left: 0;
+    transform: skew(0deg);
+}
+
+.close-button img {
+    height: 24px;
+    margin-right: 5px;
+}
+
+.close-button p {
+    font-weight: 400;
+    font-size: 16px;
+    margin: 0;
+    font-family: Montserrat;
+}
+
+.circle-text-container {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #1D4D56;
+    border-radius: 125px;
+    width: 125px;
+    height: 125px;
+    top: -20px;
+    right: -62.5px;
+}
+
+.circle-text-container .arrow {
+    width: 20px;
+    height: 20px;
+    border-bottom: 30px solid #FFFFFF;
+    border-right: 30px solid #FFFFFF;
+    transform: rotate(45deg);
+}
+
+.circle-text-container img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: 0;
+    transform-origin: center;
+    transform: translateY(-50%) translateX(-50%);
+    animation: spin 10s linear infinite;
+}
+
+.send-button {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    height: 128px;
+    cursor: pointer;
+    background-color: white;
+    transform: translateY(100%);
+    transition: transform ease-in-out .3s;
+}
+
+.send-wrapper {
+    position: relative;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.send-background {
+    position: absolute;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    left: -120%;
+    background-color: #00FFC2;
+    transform: skew(-45deg);
+    transition: all ease-in-out .3s;
+}
+
+.send-wrapper:hover .send-background {
+    left: 0;
+    transform: skew(0deg);
+}
+
+.send-button p {
+    font-weight: 800;
+    font-size: 18px;
+    margin: 0;
+    color: #142D35;
+    font-family: Montserrat;
+}
+
+.send-button-container-overflow {
+    width: 460px;
+    height: 620px;
+    padding: 48px;
+    display: flex;
+    margin: auto;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+}

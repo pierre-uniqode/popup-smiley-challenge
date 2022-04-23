@@ -1,4 +1,34 @@
-.App {
+body {
     background: #002026;
+}
+
+.App {
     height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.background,
+.decoration {
+    position: absolute;
+}
+
+.background {
+    width: 110vw;
+    transform-origin: center;
+    transform: rotate(-7deg);
+    top: 60vh;
+    z-index: -2;
+    opacity: 0;
+    transition: all ease .5s;
+}
+
+.decoration {
+    top: 10%;
+    transform: translateX(-100px);
+    opacity: 0;
+    transition: transform ease .5s, opacity ease .8s;
 }
